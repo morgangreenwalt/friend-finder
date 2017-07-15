@@ -13,7 +13,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/survey", function(req, res) {
-  res.sendFile(path.join(__dirname, "/../public/survery.html"));
+  res.sendFile(path.join(__dirname, "/../public/survey.html"));
 });
 
 // Create New Characters - takes in JSON input
