@@ -1,19 +1,8 @@
-// Dependencies
-var express = require("express");
-var bodyParser = require("body-parser");
-var path = require("path");
+// // Basic route that sends the user first to the AJAX Page
+// app.get("/", function(req, res) {
+//   res.sendFile(path.join(__dirname, "/../public/home.html"));
+// });
 
-// Sets up the Express App
-var app = express();
-var PORT = process.env.PORT || 3000;
-
-// Basic route that sends the user first to the AJAX Page
-app.get("/api/friends", function(req, res) {
-  res.json(friendsList);
-});
-
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
-});
+// app.get("/survey", function(req, res) {
+//   res.sendFile(path.join(__dirname, "/../public/survey.html"));
+// });

@@ -1,31 +1,18 @@
-// Dependencies
-var express = require("express");
-var bodyParser = require("body-parser");
-var path = require("path");
+// // Basic route that sends the user first to the AJAX Page
+// app.get("/api/friends", function(req, res) {
+//   res.json(friendsList);
+// });
 
-// Sets up the Express App
-var app = express();
-var PORT = process.env.PORT || 3000;
+// // Create New Characters - takes in JSON input
+// app.post("/api/friends", function(req, res) {
+//   var newFriend = req.body;
+//   console.log(newFriend);
+//     friendsList.push(newFriend);
+//   res.sendFile(path.join(__dirname, "/../public/home.html"));
+// });
 
-// Basic route that sends the user first to the AJAX Page
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "/../public/home.html"));
-});
-
-app.get("/survey", function(req, res) {
-  res.sendFile(path.join(__dirname, "/../public/survey.html"));
-});
-
-// Create New Characters - takes in JSON input
-app.post("/api/friends", function(req, res) {
-  var newFriend = req.body;
-  console.log(newFriend);
-    friendsList.push(newFriend);
-  res.sendFile(path.join(__dirname, "/../public/home.html"));
-});
-
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
-});
+// // Starts the server to begin listening
+// // =============================================================
+// app.listen(PORT, function() {
+//   console.log("App listening on PORT " + PORT);
+// });
