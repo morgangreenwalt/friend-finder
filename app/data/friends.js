@@ -14,7 +14,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-var friendsList = [];
+var friendsList = [
+	{
+	  name: "morgan",
+	  photo: "www.google.com",
+	  preferences: [1, 2, 4, 3, 4, 5, 2, 1, 5, 3]
+	},
+
+	{
+	  name: "callie",
+	  photo: "www.google.com",
+	  preferences: [1, 2, 5, 3, 4, 5, 1, 3, 5, 2]
+	}
+];
 
 // HTML : Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
@@ -28,20 +40,35 @@ app.get("/survey", function(req, res) {
 // API : Basic route that sends the user first to the AJAX Page
 app.get("/api/friends", function(req, res) {
 res.json(friendsList);
-});
 
-// app.get("/api/clear", function(req, res) {
-// 	friendsList = [];
-// 	// alert("Clearing friends list... go find new friends you loner!");
-// 	// res.sendFile(path.join(__dirname, "/api/friends"));
-// });
+});
 
 // Create New Characters - takes in JSON input
 app.post("/api/friends", function(req, res) {
-  var newFriend = req.body;
-  console.log(newFriend);
+	var newFriend = req.body;
+	var currentScores = 0;
+	var newScore = 0;
+	var send2Modal;
+
+	// Calculating totals 
+	for (var i = 0; i < friendsList.length; i++) {
+		console.log(friendsList[i].preferences);
+
+		for (var j = 0; j < friendsList[i].preferences.length; j++) {
+
+        	currentScores = Math.abs(friendsList[i].preferences[j]);
+        	newScore = Math.abs(newFriend.preferences[j]);
+    	}
+    	console.log(currentScores);
+    	console.log(newScore);
+    }
+
+    if (newScore = currentScores ){
+
+    }
+
     friendsList.push(newFriend);
-  res.sendFile(path.join(__dirname, "/../public/home.html"));
+    console.log(newFriend);
 });
 
 // Starts the server to begin listening
