@@ -7,6 +7,7 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
 </head>
 
 <style>
@@ -14,6 +15,12 @@
     padding-top: 10px;
     padding-bottom: 20px;
   }  
+
+  #match-image{
+    height: inherit;
+    width: 100%;
+  }
+  
 </style>
 
 <body>
@@ -31,7 +38,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <h4 id="match-name">test</h4>
+          <h4 id="match-name"></h4>
           <img id="match-image" src="">
         </div>
         <div class="modal-footer">
@@ -55,24 +62,24 @@
 <!-- Reservation Page -->
   <div class="panel panel-default">
     <div class="panel-heading">
-        <h4 class="panel-title">Table Reservation</h4>
+        <h4 class="panel-title">Friend Your Best Friend</h4>
     </div>
       
     <div class="panel-body">
 
       <form role="form" id="friend-form">
         <div class="form-group">
-          <label for="">Name</label>
+          <label for="">Name<span style="color: red">*</span></label>
           <input type="text" class="form-control" id="name" required>
         </div>
 
         <div class="form-group">
-          <label for="">Link to Photo</label>
+          <label for="">Link to Photo<span style="color: red">*</span></label>
           <input type="text" class="form-control" id="phone" required>
         </div>
 
         <h3>Question 1</h3>
-        <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+        <h4>Your mind is always buzzing with unexplored ideas and plans.<span style="color: red">*</span></h4>
         <select class="custom-select" id="question1">
           <option disabled selected>Select an option</option>
           <option value="1">1 (Strongly Agree)</option>
@@ -83,7 +90,7 @@
         </select>
 
         <h3>Question 2</h3>
-        <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+        <h4>Generally speaking, you rely more on your experience than your imagination.<span style="color: red">*</span></h4>
         <select class="custom-select" id="question2">
           <option disabled selected>Select an option</option>
           <option value="1">1 (Strongly Agree)</option>
@@ -94,7 +101,7 @@
         </select>
 
         <h3>Question 3</h3>
-        <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+        <h4>You find it easy to stay relaxed and focused even when there is some pressure.<span style="color: red">*</span></h4>
         <select class="custom-select" id="question3">
           <option disabled selected>Select an option</option>
           <option value="1">1 (Strongly Agree)</option>
@@ -105,7 +112,7 @@
         </select>
 
         <h3>Question 4</h3>
-        <h4>You rarely do something just out of sheer curiosity.</h4>
+        <h4>You rarely do something just out of sheer curiosity.<span style="color: red">*</span></h4>
         <select class="custom-select" id="question4">
           <option disabled selected>Select an option</option>
           <option value="1">1 (Strongly Agree)</option>
@@ -116,7 +123,7 @@
         </select>
 
         <h3>Question 5</h3>
-        <h4>People can rarely upset you.</h4>
+        <h4>People can rarely upset you.<span style="color: red">*</span></h4>
         <select class="custom-select" id="question5">
           <option disabled selected>Select an option</option>
           <option value="1">1 (Strongly Agree)</option>
@@ -127,7 +134,7 @@
         </select>
 
         <h3>Question 6</h3>
-        <h4>It is often difficult for you to relate to other people’s feelings.</h4>
+        <h4>It is often difficult for you to relate to other people’s feelings.<span style="color: red">*</span></h4>
         <select class="custom-select" id="question6">
           <option disabled selected>Select an option</option>
           <option value="1">1 (Strongly Agree)</option>
@@ -138,7 +145,7 @@
         </select>
 
         <h3>Question 7</h3>
-        <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+        <h4>In a discussion, truth should be more important than people’s sensitivities.<span style="color: red">*</span></h4>
         <select class="custom-select" id="question7">
           <option disabled selected>Select an option</option>
           <option value="1">1 (Strongly Agree)</option>
@@ -149,7 +156,7 @@
         </select>
 
         <h3>Question 8</h3>
-        <h4>You rarely get carried away by fantasies and ideas.</h4>
+        <h4>You rarely get carried away by fantasies and ideas.<span style="color: red">*</span></h4>
         <select class="custom-select" id="question8">
           <option disabled selected>Select an option</option>
           <option value="1">1 (Strongly Agree)</option>
@@ -160,7 +167,7 @@
         </select>
 
         <h3>Question 9</h3>
-        <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+        <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.<span style="color: red">*</span></h4>
         <select class="custom-select" id="question9">
           <option disabled selected>Select an option</option>
           <option value="1">1 (Strongly Agree)</option>
@@ -171,7 +178,7 @@
         </select>
 
         <h3>Question 10</h3>
-        <h4>You feel more energetic after spending time with a group of people.</h4>
+        <h4>You feel more energetic after spending time with a group of people.<span style="color: red">*</span></h4>
         <select class="custom-select" id="question10">
           <option disabled selected>Select an option</option>
           <option value="1">1 (Strongly Agree)</option>
@@ -190,8 +197,8 @@
   <div class="footer text-center">
     <a href="/api/friends">API Friends List</a>
     <span>|</span>
-    <a href="/api/clear">Clear Friends</a>
-    <span>|</span>
+    <!-- <a href="/api/clear">Clear Friends</a>
+    <span>|</span> -->
     <a href="https://github.com/morgangreenwalt/friend-finder">GitHub Repo</a>
     <br>
   </div>
@@ -210,6 +217,8 @@ $("#friend-form").html("Thanks for your submission! Meet your new best friend!")
 
 $.post("/api/friends", newFriend)
 .done(function(data) {
+  $("#match-name").text(data.name);
+  $("#match-image").attr("src", data.photo);
 });
 });
 
@@ -220,4 +229,3 @@ $("#close-modal").on("click", function(){
 </script>
 </body>
 </html>
-<!-- preferences: [parseInt($("#question1").val()), parseInt($("#question2").val()), parseInt($("#question3").val()), parseInt($("#question4").val()), parseInt($("#question5").val()), parseInt($("#question6").val()), parseInt($("#question7").val()), parseInt($("#question8").val()), parseInt($("#question9").val()), parseInt($("#question10").val())] -->
